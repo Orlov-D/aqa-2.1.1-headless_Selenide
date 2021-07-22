@@ -11,11 +11,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class CardOrderTest {
 //    java -jar artifacts\app-order.jar
 
-//    @BeforeAll
-//    void setUp(){
-//        $(chrome --headless --remote-debugging-port=9222 chromium.org);
-//    }
-
     @Test
     void shouldSubmitRequest() {
         open("http://localhost:9999");
