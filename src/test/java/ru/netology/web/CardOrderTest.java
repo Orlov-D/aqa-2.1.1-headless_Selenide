@@ -16,8 +16,8 @@ public class CardOrderTest {
 
     @Test
     public void shouldSubmitRequest() {
-        SelenideElement form = $("[method=post]");
-        form.$("[data-test-id=name] input").setValue("Василий");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Петров Василий Винниаминович");
         form.$("[data-test-id=phone] input").setValue("+79270000000");
         form.$("[data-test-id=agreement]").click();
         form.$("[role=button]").click();
@@ -26,8 +26,8 @@ public class CardOrderTest {
 
     @Test
     public void shouldPass() {
-        SelenideElement form = $("[method=post]");
-        form.$("[data-test-id=name] input").setValue("Васин-Красин Василь");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Васин-Красин Василь Ярикович");
         form.$("[data-test-id=phone] input").setValue("+71234567890");
         form.$("[data-test-id=agreement]").click();
         form.$("[role=button]").click();
@@ -36,7 +36,7 @@ public class CardOrderTest {
 
     @Test
     public void nameValidationWithValue() {
-        SelenideElement form = $("[method=post]");
+        SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("5");
         form.$("[data-test-id=phone] input").setValue("+71234567890");
         form.$("[data-test-id=agreement]").click();
@@ -46,7 +46,7 @@ public class CardOrderTest {
 
     @Test
     public void nameValidationEmpty() {
-        SelenideElement form = $("[method=post]");
+        SelenideElement form = $(".form");
         form.$("[data-test-id=phone] input").setValue("+71234567890");
         form.$("[data-test-id=agreement]").click();
         form.$("[role=button]").click();
@@ -55,8 +55,8 @@ public class CardOrderTest {
 
     @Test
     public void phoneValidationWithValue() {
-        SelenideElement form = $("[method=post]");
-        form.$("[data-test-id=name] input").setValue("Василий");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Козлов Василий Игнатьевич");
         form.$("[data-test-id=phone] input").setValue("5");
         form.$("[data-test-id=agreement]").click();
         form.$("[role=button]").click();
@@ -65,8 +65,8 @@ public class CardOrderTest {
 
     @Test
     public void phoneValidationEmpty() {
-        SelenideElement form = $("[method=post]");
-        form.$("[data-test-id=name] input").setValue("Василий");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Орлов Василий Карлович");
         form.$("[data-test-id=agreement]").click();
         form.$("[role=button]").click();
         $("[data-test-id='phone'].input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
@@ -74,8 +74,8 @@ public class CardOrderTest {
 
     @Test
     public void checkboxValidation() {
-        SelenideElement form = $("[method=post]");
-        form.$("[data-test-id=name] input").setValue("Василий");
+        SelenideElement form = $(".form");
+        form.$("[data-test-id=name] input").setValue("Ленин Василий Евгеньевич");
         form.$("[data-test-id=phone] input").setValue("+79012345678");
         form.$("[role=button]").click();
         $("[data-test-id=agreement].input_invalid").shouldHave(exactText("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй"));
